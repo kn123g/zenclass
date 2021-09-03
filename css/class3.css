@@ -1,0 +1,94 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fce4ec;
+}
+h5{
+    font-size: 14px;
+    color:#6d053e;
+}
+.source{
+    font-weight: bold;
+    font-size: medium;
+}
+table{
+    width: 100%;
+}
+thead{
+    position:absolute;
+    margin-top: -1.5em;
+    width:95%;
+    height: 2em;
+    z-index: 2;
+    text-align: center;
+    background-color: #fce4ec;
+    color: #6d053e;
+}
+#tablebodyforin th{
+    width: 50vw;
+}
+tbody{
+    position: relative;
+    top: 1em;
+}
+#tablebodyforeach th{
+    width: 35vw;
+}
+#tablebodyforof th{
+    width: 35vw;
+}
+td{
+    text-align: center;
+    width: 35vw;
+    color:#6d053e;
+}
+.countries{
+    clear: both;
+    overflow: auto;
+    height: 25vh;
+    margin-top: 100px;
+}
+.country{
+    display: inline-block;
+    width : 18vw;
+    height: 5vh;
+    font-size: 1.5vw;
+    color: #880e4f;
+}
+.title{
+    color: #e91e63;
+}
+.note{
+    height:5em;
+    font-size: 14px;
+    color:black;
+    float: right;
+    padding: 1em;
+}
+.titlename{
+    float: left;
+    padding: 1em;
+    font-size: 1em;
+}
+.resumecontent{
+    clear: both;
+    overflow: auto;
+    height: 25vh;
+    padding: 0 2em;
+    background-color: white;
+}
+
+.content{
+    padding:0 1em;
+    clear: both;
+}
+
+.content .list{
+    color: #220113;
+    font-size: 16px;
+    font-weight: 500;
+    width : 100%;
+    height: 100%;
+}
