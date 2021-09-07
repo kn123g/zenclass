@@ -1,0 +1,32 @@
+body{
+    background-color: violet;
+}
+
+li{
+    color:blue;
+    font-size: larger;
+    list-style-type: none;
+    padding:0.5em;
+    width: 100%;
+}
+
+li:hover{
+    background-color: orangered;
+    border-radius: 10px;
+}
+
+.nav{
+    width: 15vw;
+    float: left;
+}
+
+.container{
+    /* display: inline-block; */
+    float: left;
+    width: 70vw;
+    padding:0 2em;
+}
+
+h1{
+    color: red;
+}
