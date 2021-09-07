@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenclass Task 03/09/2021</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/dark.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script src="content.js" defer></script>
+    <script defer>hljs.highlightAll();</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="split">
+            <h3>1. Fix the bugs in below snippet</h3>
+            <pre>
+            <code class= "language-html" id = "one"></code>
+        </pre>
+        </div>
+        <div class="split">
+            <h3>Fixed code</h3>
+            <pre>
+            <code class= "language-html" id = "oneAns"></code>
+        </pre>
+        </div>
+    </div>
+    <div class="container">
+        <div class="split">
+            <h3>2. Try the below one</h3>
+            <pre>
+                <code class= "language-html" id = "two"></code>
+            </pre>
+        </div>
+        <div class="split">
+            <h3>Fixed code</h3>
+            <pre>
+                <code class= "language-html" id = "twoAns"></code>
+            </pre>
+        </div>
+    </div>
+    <div class="container">
+        <div class="contact content">
+            <h3>3. Design a contact us form with all fields as required.</h3>
+            <form class="form" method="GET">
+                <fieldset>
+                    <legend>Contact Us</legend>
+                    <label for="fname">First Name</label>
+                    <br />
+                    <input class='input' type="text" id="fname" name="firstname" placeholder="Your name.." required>
+                    <br />
+
+                    <label for="lname">Last Name</label>
+                    <br />
+                    <input class='input' type="text" id="lname" name="lastname" placeholder="Your last name..">
+                    <br />
+
+                    <label for="country">Country</label>
+                    <br />
+                    <select class='input' id="country" name="country" required>
+                        <option value="india">India</option>
+                        <option value="usa">USA</option>
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                    </select>
+                    <br />
+
+                    <label for="email">Email</label>
+                    <br />
+                    <input class='input' type="email" id="email" name="email" placeholder="Your email id.." required>
+                    <br />
+
+                    <label for="phone">Phone No</label>
+                    <br />
+                    <input class='input' type="number" id="phone" name="phone" placeholder="Your Phone No.." required>
+                    <br />
+
+                    <label for="reason">Reason</label>
+                    <br />
+                    <textarea class='input' id="reason" name="subject" placeholder="Write something.."
+                        style="height:10vh" required></textarea>
+                    <br />
+
+                    <input class='submit' type="submit" value="Submit">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <h3>4. Use certain HTML elements to display the following in a HTML page.</h3>
+        <ul>
+            <li>Programming Language
+                <ul>
+                    <li>JavaScript
+                        <ul class="alphabet">
+                            <li>Angular</li>
+                            <li>React</li>
+                            <li>Vue.js</li>
+                        </ul>
+                    </li>
+                    <li>Python
+                        <ul class="alphabet">
+                            <li>Django Framework</li>
+                            <li>Flask Framework</li>
+                        </ul>
+                    </li>
+                    <li>Java
+                        <ul class="alphabet">
+                            <li>Spring</li>
+                            <li>Maven</li>
+                            <li>Hibernate</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Database
+                <ul class="alphabet">
+                    <li>MySQL</li>
+                    <li>MongoDB</li>
+                    <li>Cansandra</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h3>5. Create an element that helps you to open the https://google.com in separate new tab.</h3>
+        <a href="https://www.google.com" target="_blank">Click here</a>
+    </div>
+
+    <div class="container">
+        <h3>6. In the form, add two radio buttons with grouping them for employee type(Salaried and own business)</h3>
+        <label for="employee">Employee type</label>
+        <br/>
+        <input type="radio" id="salariedEmployee" value="salaried" name="employee"/>Salaried
+        <input type="radio" id="ownEmployee" value="salaried" name="employee"/>own business
+    </div>
+
+    <div class="container">
+        <h3>10. In your, HTML page add the below line and Highlight it without using any CSS.</h3>
+        <li><mark>"HTML & CSS is awesome"</mark></li>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+*{
+    /* padding: 0;
+    margin: 0; */
+    box-sizing: content-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container{
+    height: 100%;
+}
+.split{
+    display: inline-block;
+    width: 45vw;
+    margin: 0 1em;
+}
+pre{
+    width: 45vw;
+}
+
+.form{
+    position: relative;
+    color: black;
+    font-weight: 500;
+    width: 20%;
+    margin: auto;
+}
+fieldset,legend{
+    background-color:white;
+}
+.label{
+    padding: 2em;
+}
+.input{
+    width: 20vw;
+    height: 5vh;
+    border: 1px solid grey;
+    border-radius:  10px;
+}
+.submit{
+    background-color: grey;
+    height: 5vh;
+    width: 10vw;
+    border: none;
+    border-radius: 10px;
+    float: right;
+    color: white;
+}
+.submit:hover{
+    background-color: darkslategrey;
+}
+.alphabet{
+    list-style-type:lower-alpha;
+}
