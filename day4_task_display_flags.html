@@ -6,11 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Countries Flag</title>
+    <style defer>
+        body {
+            margin-top: 0;
+        }
+        
+        header {
+            margin: 0;
+            background-color: #e91e63;
+            color: white;
+            text-align: center;
+            padding: 1%;
+            font-size: large;
+            position: fixed;
+            width: 100%;
+            z-index: 3;
+        }
+        
+        .source {
+            font-weight: bold;
+            font-size: medium;
+            color: white;
+        }
+        
+        #countries {
+            padding-top: 5%;
+        }
+        
+        @media screen and (min-width:200px) and (max-width:500px) {
+            header {
+                font-size: large;
+                padding: 3%;
+            }
+            .source {
+                font-size: medium;
+            }
+            #countries {
+                padding-top: 10%;
+            }
+        }
+    </style>
     <script defer>
         let x = new XMLHttpRequest();
         let countries = null;
 
-        x.onload = function () {
+        x.onload = function() {
             if (this.status >= 200 && this.status <= 200) {
                 countries = JSON.parse(this.responseText);
                 countries.forEach(element => {
@@ -30,7 +70,7 @@
                 });
             }
         }
-        x.onerror = function () {
+        x.onerror = function() {
             console.log(this.statusText);
         }
 
@@ -40,6 +80,7 @@
 </head>
 
 <body>
+    <header>This is responsive page <a class="source" href="https://github.com/kn123g/zenclass/blob/main/day4_task_display_flags.html" target="_blank">Click here to see source code</a></header>
     <div id='countries'>
     </div>
 </body>

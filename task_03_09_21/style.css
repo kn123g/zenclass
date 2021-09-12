@@ -10,9 +10,35 @@
     src: url(../fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
 }
 
+body {
+    margin-top: 0;
+}
+
+header {
+    margin: 0;
+    background-color: #e91e63;
+    color: white;
+    text-align: center;
+    padding: 1%;
+    font-size: large;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.source {
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+}
+
 .container {
     height: 100%;
     width: 100%;
+}
+
+#question1 {
+    padding-top: 5%;
 }
 
 .fixsplit {
@@ -198,6 +224,16 @@ form li {
 }
 
 @media screen and (min-width:200px) and (max-width:500px) {
+    header {
+        font-size: large;
+        padding: 3%;
+    }
+    .source {
+        font-size: medium;
+    }
+    #question1 {
+        padding-top: 10%;
+    }
     .fixsplit {
         width: 100vw;
     }

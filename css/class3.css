@@ -4,7 +4,19 @@
 }
 
 body {
-    background-color: white;
+    margin-top: 0;
+}
+
+header {
+    margin: 0;
+    background-color: #e91e63;
+    color: white;
+    text-align: center;
+    padding: 1%;
+    font-size: large;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
 }
 
 h5 {
@@ -15,6 +27,7 @@ h5 {
 .source {
     font-weight: bold;
     font-size: medium;
+    color: white;
 }
 
 table {
@@ -63,6 +76,10 @@ td {
     border: 1px double grey;
     text-align: center;
     padding: 0.5em;
+}
+
+#countriesName {
+    padding-top: 5%;
 }
 
 .countries {
@@ -122,5 +139,14 @@ td {
 @media screen and (min-width:200px) and (max-width:500px) {
     .country {
         font-size: 0.7em;
+    }
+    header {
+        font-size: medium;
+    }
+    .source {
+        font-size: small;
+    }
+    #countriesName {
+        padding-top: 10%;
     }
 }
