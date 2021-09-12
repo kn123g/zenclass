@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+#section1 {
+    flex-basis: 50%;
+    background-image: url(food.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#section1 p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    color: rgb(201, 193, 193);
+}
+
+#section1 div {
+    margin: 2%;
+}
+
+#section2 {
+    flex-basis: 35%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#section3 {
+    flex-basis: 15%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(248, 79, 107, 0.5), rgb(49, 49, 250, 0.5));
+}
+
+#section3 span {
+    font-size: 3em;
+    color: black;
+    font-weight: bold;
+}
+
+#section2 .head {
+    display: flex;
+    flex-direction: row;
+    margin: 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#section2 .foot {
+    display: flex;
+    flex-direction: row;
+    margin: 10% 0;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2em;
+}
+
+#section2 #title {
+    flex-basis: 25%;
+}
+
+#section2 #title span {
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(56, 53, 53);
+}
+
+#section2 #nonveg {
+    flex-basis: 25%;
+    height: 60%;
+    background-color: rgb(22, 128, 170);
+    border-radius: 20px;
+}
+
+#section2 #veg {
+    flex-basis: 25%;
+    height: 30%;
+    background-color: rgb(50, 168, 50);
+    border-radius: 30px;
+}
+
+#section2 span {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#section2 #veg,
+#nonveg {
+    /* margin: 1em 1em; */
+    padding: 0 0.5em;
+    line-height: normal;
+}
+
+#tagline {
+    margin: 0 2em;
+}
+
+#tagline span {
+    font-size: 5em;
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+
+#section2 .foot .info {
+    flex-basis: 25%;
+}
+
+#section2 .foot .info span {
+    color: black;
+    font-size: 0.5em;
+}
