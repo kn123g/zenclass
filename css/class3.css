@@ -1,94 +1,120 @@
-*{
+* {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
 }
-body{
-    background-color: #fce4ec;
+
+body {
+    background-color: white;
 }
-h5{
+
+h5 {
     font-size: 14px;
-    color:#6d053e;
+    color: #6d053e;
 }
-.source{
+
+.source {
     font-weight: bold;
     font-size: medium;
 }
-table{
+
+table {
     width: 100%;
 }
-thead{
-    position:absolute;
+
+thead {
+    position: absolute;
     margin-top: -1.5em;
-    width:95%;
+    width: 99%;
     height: 2em;
     z-index: 2;
     text-align: center;
-    background-color: #fce4ec;
-    color: #6d053e;
+    background-color: #e91e63;
+    color: white;
 }
-#tablebodyforin th{
+
+#tablebodyforin th {
     width: 50vw;
 }
-tbody{
+
+tbody {
     position: relative;
     top: 1em;
 }
-#tablebodyforeach th{
+
+#tablebodyforeach th {
     width: 35vw;
 }
-#tablebodyforof th{
+
+#tablebodyforof th {
     width: 35vw;
 }
-td{
+
+td {
     text-align: center;
     width: 35vw;
-    color:#6d053e;
+    color: #6d053e;
 }
-.countries{
+
+table {
+    border-spacing: 0;
+}
+
+td {
+    border: 1px double grey;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.countries {
     clear: both;
     overflow: auto;
-    height: 25vh;
+    height: 30vh;
     margin-top: 100px;
 }
-.country{
+
+.country {
     display: inline-block;
-    width : 18vw;
+    width: 18vw;
     height: 5vh;
     font-size: 1.5vw;
     color: #880e4f;
 }
-.title{
+
+.title {
     color: #e91e63;
 }
-.note{
-    height:5em;
+
+.note {
+    height: 5em;
     font-size: 14px;
-    color:black;
+    color: black;
     float: right;
     padding: 1em;
 }
-.titlename{
+
+.titlename {
     float: left;
     padding: 1em;
     font-size: 1em;
 }
-.resumecontent{
+
+.resumecontent {
     clear: both;
     overflow: auto;
-    height: 25vh;
+    height: 70vh;
     padding: 0 2em;
     background-color: white;
 }
 
-.content{
-    padding:0 1em;
+.content {
+    padding: 0 1em;
     clear: both;
 }
 
-.content .list{
+.content .list {
     color: #220113;
     font-size: 16px;
     font-weight: 500;
-    width : 100%;
+    width: 100%;
     height: 100%;
 }
