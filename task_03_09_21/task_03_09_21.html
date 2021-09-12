@@ -10,18 +10,20 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/dark.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
     <script src="content.js" defer></script>
-    <script defer>hljs.highlightAll();</script>
+    <script defer>
+        hljs.highlightAll();
+    </script>
 </head>
 
 <body>
     <div class="container">
-        <div class="split">
+        <div class="fixsplit">
             <h3>1. Fix the bugs in below snippet</h3>
             <pre>
             <code class= "language-html" id = "one"></code>
         </pre>
         </div>
-        <div class="split">
+        <div class="fixsplit">
             <h3>Fixed code</h3>
             <pre>
             <code class= "language-html" id = "oneAns"></code>
@@ -29,13 +31,13 @@
         </div>
     </div>
     <div class="container">
-        <div class="split">
+        <div class="fixsplit">
             <h3>2. Try the below one</h3>
             <pre>
                 <code class= "language-html" id = "two"></code>
             </pre>
         </div>
-        <div class="split">
+        <div class="fixsplit">
             <h3>Fixed code</h3>
             <pre>
                 <code class= "language-html" id = "twoAns"></code>
@@ -43,9 +45,9 @@
         </div>
     </div>
     <div class="container">
-        <div class="contact content">
-            <h3>3. Design a contact us form with all fields as required.</h3>
-            <form class="form" method="GET">
+        <h3>3. Design a contact us form with all fields as required.</h3>
+        <div class="contact form">
+            <form class="" method="GET">
                 <fieldset>
                     <legend>Contact Us</legend>
                     <label for="fname">First Name</label>
@@ -80,8 +82,7 @@
 
                     <label for="reason">Reason</label>
                     <br />
-                    <textarea class='input' id="reason" name="subject" placeholder="Write something.."
-                        style="height:10vh" required></textarea>
+                    <textarea class='input' id="reason" name="subject" placeholder="Write something.." style="height:10vh" required></textarea>
                     <br />
 
                     <input class='submit' type="submit" value="Submit">
@@ -135,13 +136,255 @@
         <h3>6. In the form, add two radio buttons with grouping them for employee type(Salaried and own business)</h3>
         <label for="employee">Employee type</label>
         <br/>
-        <input type="radio" id="salariedEmployee" value="salaried" name="employee"/>Salaried
-        <input type="radio" id="ownEmployee" value="salaried" name="employee"/>own business
+        <input type="radio" id="salariedEmployee" value="salaried" name="employee" />Salaried
+        <input type="radio" id="ownEmployee" value="salaried" name="employee" />own business
+    </div>
+
+    <div class="container" id="ans_9">
+        <h3>7. In your, HTML page add the below line and Highlight it without using any CSS.</h3>
+        <div class="content flex">
+            <form class="flexform">
+                <div class="title">
+                    <h2>Yes! I want to subscribe to <i>Mag-O-Zine</i></h2>
+                </div>
+                <div class="name">
+                    <div class="split">
+                        <input type="text" name="firstname" value="Joe" />
+                        <span>First Name</span>
+                    </div>
+                    <div class="split">
+                        <input type="text" name="lastname" value="Schmegeguie" />
+                        <span>Last Name</span>
+                    </div>
+                </div>
+                <div class="address1">
+                    <div class="split">
+                        <input type="text" name="address" value="1001 Washington Street" />
+                        <span>Address</span>
+                    </div>
+                </div>
+                <div class="address2">
+                    <div class="split">
+                        <input type="text" name="city" value="Auston" />
+                        <span>City</span>
+                    </div>
+                    <div class="split">
+                        <input type="text" name="state" value="CA" />
+                        <span>State</span>
+                    </div>
+                    <div class="split">
+                        <input type="number" name="pin" value="9999" />
+                        <span>Zip</span>
+                    </div>
+                </div>
+                <div class="subscribe">
+                    <div class="split">
+                        <span>Subscribe for:</span>
+                    </div>
+                    <div class="radio split">
+                        <input type="radio" name="subscribe" checked /><span>1 year ($19.95)</span>
+                    </div>
+                    <div class="radio split">
+                        <input type="radio" name="subscribe" /><span>2 year ($35.00)</span>
+                    </div>
+                </div>
+                <div class="send">
+                    <div class="split">
+                        <span>Send me more information about:</span>
+                    </div>
+                    <div class="split">
+                        <div><input type='checkbox' name="send" checked /><span> Computer-Zine</span></div>
+                        <div><input type='checkbox' /> <span>Fishing-Zine</span></div>
+                        <div><input type='checkbox' name="send" checked/><span> Cat-O-Zine</span></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>8. Use the table tag to design given image</h3>
+        <div class="table">
+            <h1>Health Chart</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">State of Health</th>
+                        <th colspan="2">Fasting Value</th>
+                        <th>After Eating</th>
+                    </tr>
+                    <tr>
+                        <th>Minimum</th>
+                        <th>Maximum</th>
+                        <th>2 hours after eating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Healthy</th>
+                        <td>70</td>
+                        <td>100</td>
+                        <td>Less than 140</td>
+                    </tr>
+                    <tr>
+                        <th>Pre-Diabetes</th>
+                        <td>101</td>
+                        <td>126</td>
+                        <td>140 to 200</td>
+                    </tr>
+                    <tr>
+                        <th>Diabetes</th>
+                        <td>More than 126</td>
+                        <td>126</td>
+                        <td>More than 200</td>
+                    </tr>
+
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>9. Write HTML input tags snippet to show default values for all Form elements.</h3>
+        <a href="task_03_09_21.html#ans_9">Click here to view the section with default input values form</a>
     </div>
 
     <div class="container">
         <h3>10. In your, HTML page add the below line and Highlight it without using any CSS.</h3>
         <li><mark>"HTML & CSS is awesome"</mark></li>
+    </div>
+
+    <div class="container">
+        <h3>11. Create an HTML page, which should contain all types of input elements.</h3>
+        <div class="inputtypes">
+            <form>
+                <ul>
+                    <li>
+                        <div>
+                            <span>input type Text </span><input type="text" placeholder="enter text" />
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type email </span><input type="email" placeholder="enter email address" required/>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>textarea tag </span><textarea placeholder="enter textarea"></textarea>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type number </span><input type="number" placeholder="enter number" required/>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span>input type password </span><input type="password" placeholder="enter password" />
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span>input type url </span><input type="url" placeholder="enter url like https://www.google.com" />
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span>input type time </span><input type="time" required/>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type search </span><input type="search" placeholder="search here" required/>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type date </span><input type="date" required/>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type month </span><input type="month" required/>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type week </span><input type="week" required/>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type button </span><input type="button" value="button" />
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type submit </span><input type="submit" value="submit" />
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type reset </span><input type="reset" value="Reset" />
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type radio </span>
+                            <input type="radio" name="radio" />Radio 1
+                            <input type="radio" name="radio" />Radio 2
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type checkbox </span>
+                            <input type="checkbox" name="check" />checkbox 1
+                            <input type="checkbox" name="check" />checkbox 2
+                            <input type="checkbox" name="check" />checkbox 3
+                            <input type="checkbox" name="check" />checkbox 4
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>select option list box </span>
+                            <select name="city" id="city">
+                    <option value="option1">option 1</option>
+                    <option value="option2">option 2</option>
+                    <option value="option3">option 3</option>
+                    <option value="option4">option 4</option>
+                </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type color </span><input type="color" />
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type range </span><input type="range" min='1' max='10' step='1' value="3" />
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type image (submit button as image) </span><input type="image" src="../images/bell.png" width="50px" height="50px" alt="submit" />
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>input type file </span><input type="file" />
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </div>
     </div>
 
 </body>

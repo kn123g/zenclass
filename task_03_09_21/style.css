@@ -1,52 +1,246 @@
-*{
+* {
     /* padding: 0;
     margin: 0; */
-    box-sizing: content-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.container{
+
+@font-face {
+    font-family: dancing;
+    src: url(../fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+}
+
+.container {
     height: 100%;
+    width: 100%;
 }
-.split{
+
+.fixsplit {
     display: inline-block;
-    width: 45vw;
+    width: 45%;
     margin: 0 1em;
 }
-pre{
+
+.split {
+    width: 100%;
+    margin: 0 1em;
+}
+
+pre {
     width: 45vw;
 }
 
-.form{
+.form {
     position: relative;
     color: black;
     font-weight: 500;
     width: 20%;
     margin: auto;
 }
-fieldset,legend{
-    background-color:white;
+
+fieldset,
+legend {
+    background-color: white;
 }
-.label{
+
+.label {
     padding: 2em;
 }
-.input{
+
+.input {
     width: 20vw;
     height: 5vh;
     border: 1px solid grey;
-    border-radius:  10px;
+    border-radius: 10px;
 }
-.submit{
+
+.submit {
     background-color: grey;
     height: 5vh;
-    width: 10vw;
+    width: 5em;
     border: none;
     border-radius: 10px;
     float: right;
     color: white;
 }
-.submit:hover{
+
+.submit:hover {
     background-color: darkslategrey;
 }
-.alphabet{
-    list-style-type:lower-alpha;
+
+.alphabet {
+    list-style-type: lower-alpha;
+}
+
+.content.flex {
+    display: inline-block;
+    width: 50vw;
+    margin: auto 25%;
+}
+
+.flexform {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    border: 0.2em solid black;
+    margin: 0.1em;
+    width: 100%;
+}
+
+.flexform .title h2 {
+    margin: 0%;
+    padding: 0.5%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.flexform .name {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexform .split {
+    margin: 0 1em;
+}
+
+.flexform .address1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexform .address2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexform .subscribe {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexform input {
+    width: 100%;
+    border: 0;
+    border-bottom: 0.2em solid black;
+    outline: none;
+    text-align: center;
+    font-size: large;
+    font-family: dancing;
+    font-weight: 800;
+}
+
+.flexform span {
+    font-weight: 400;
+}
+
+.subscribe span {
+    font-weight: bold;
+    text-align: start;
+}
+
+.subscribe input {
+    width: auto;
+}
+
+.subscribe input[type=radio]:checked {
+    background-color: black;
+}
+
+.send span {
+    font-weight: bold;
+}
+
+.flexform .send input {
+    width: auto;
+}
+
+.send .split {
+    display: flex;
+    flex-direction: column;
+}
+
+.table {
+    margin: auto 25%;
+    align-content: center;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-spacing: 0;
+    text-align: center;
+}
+
+td,
+th {
+    padding: 1em;
+}
+
+.table h1 {
+    text-align: center;
+}
+
+.inputtypes span {
+    font-weight: bold;
+    display: inline-block;
+    width: 20%;
+}
+
+.inputtypes div {
+    margin: 1em auto;
+}
+
+form li {
+    list-style-type: decimal;
+}
+
+
+/* .inputtypes .input {
+    display: inline-block;
+    width: 20%;
+} */
+
+@media screen and (min-width:200px) and (max-width:500px) {
+    .fixsplit {
+        width: 100vw;
+    }
+    .form {
+        margin-left: 25%;
+    }
+    .table {
+        margin: auto 1em;
+    }
+    pre {
+        width: 100vw;
+    }
+    .input {
+        width: 50vw;
+    }
+    .content.flex {
+        width: 80vw;
+        margin: auto 10%;
+    }
+    .split {
+        display: inline-block;
+        width: 90%;
+    }
+    .flexform .name {
+        flex-direction: column;
+    }
+    .flexform .address2 {
+        flex-direction: column;
+    }
+    .flexform .subscribe {
+        display: flex;
+        flex-direction: column;
+    }
+    .flexform {
+        padding: 0.5em;
+        border: 0.2em solid black;
+    }
+    .inputtypes span {
+        width: 50%;
+    }
 }
