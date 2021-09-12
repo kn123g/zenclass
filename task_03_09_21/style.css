@@ -161,7 +161,7 @@ legend {
 }
 
 .table {
-    margin: auto 25%;
+    margin: auto 35%;
     align-content: center;
 }
 
@@ -175,7 +175,8 @@ td {
 
 td,
 th {
-    padding: 1em;
+    padding: 0.5em;
+    font-size: 0.8em;
 }
 
 .table h1 {
@@ -195,12 +196,6 @@ th {
 form li {
     list-style-type: decimal;
 }
-
-
-/* .inputtypes .input {
-    display: inline-block;
-    width: 20%;
-} */
 
 @media screen and (min-width:200px) and (max-width:500px) {
     .fixsplit {
