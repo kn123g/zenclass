@@ -76,7 +76,7 @@ td {
     display: inline-block;
     width: 18vw;
     height: 5vh;
-    font-size: 1.5vw;
+    font-size: 0.9em;
     color: #880e4f;
 }
 
@@ -117,4 +117,10 @@ td {
     font-weight: 500;
     width: 100%;
     height: 100%;
+}
+
+@media screen and (min-width:200px) and (max-width:500px) {
+    .country {
+        font-size: 0.7em;
+    }
 }
