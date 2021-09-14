@@ -4,7 +4,7 @@ let ans1 =
             print = '';
         for (let i = 0; i < arr.length; i++) {
             if ((+arr[i]) % 2 !== 0) {
-                print = ` + '${print}${arr[i]}' + `;
+                print = ` + '`${print}${arr[i]} `' + `;
         }
     }
     if (print === '') {
