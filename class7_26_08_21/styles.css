@@ -1,5 +1,4 @@
-nav {
-    background-color: #dc3545;
-    position: fixed;
-    width: 100%;
+body {
+    min-height: 2000px;
+    padding-top: 100px;
 }
