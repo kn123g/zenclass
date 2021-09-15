@@ -90,30 +90,3 @@ x.onerror = function() {
 
 x.open('GET', 'https://restcountries.eu/rest/v2/all');
 x.send();
-
-document.getElementById('result').addEventListener('click', e => {
-
-    let result = new KeyboardEvent('keydown', { bubbles: true, cancelable: true, code: 'KeyJ', ctrlKey: true, shiftKey: true, key: 'J', keyCode: 74 });
-
-    window.dispatchEvent(result);
-});
-
-
-function openConsole() {
-
-    // let result = new KeyboardEvent('keydown', { code: 'KeyJ', ctrlKey: true, shiftKey: true, key: 'J', keyCode: 74 });
-
-    // result.ctrlKey = true;
-    // result.shiftKey = true;
-    // result.key = 'J';
-    // result.code = 'KeyJ';
-    // result.bubbles = true;
-    // result.cancelBubble = true;
-    // result.composed = true;
-    // result.isTrusted = true;
-    // result.keyCode = 74;
-    // result.returnValue = true;
-    // result.type = 'keydown'
-    //     document.dispatchEvent(result);
-    //     console.log('hai')
-}
