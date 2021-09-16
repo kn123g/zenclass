@@ -1,10 +1,8 @@
-let counrtries = ['Afghanistan', 'Albania', 'Argentina', 'Austria', 'China']
-let i = 0;
-
 function addCountry() {
     let option = document.createElement('option');
-    option.value = counrtries[i];
-    option.innerHTML = counrtries[i];
+    let newCountry = document.getElementById('countryName').value;
+    option.value = newCountry;
+    option.innerHTML = newCountry;
     document.getElementById('country').appendChild(option);
-    i++;
+    document.getElementById('countryName').value = '';
 }

@@ -10,22 +10,25 @@
     <style>
         select {
             width: 10em;
+            display: block;
         }
         
         button {
             background-color: rgb(231, 31, 31);
             color: white;
             width: 10em;
+            display: block;
         }
     </style>
 </head>
 
 <body>
+    New Country <input type="text" id="countryName" />
     <select name="country" id="country">
         <option value="india">India</option>
         <option value="usa">USA</option>
     </select>
-    <button onclick="addCountry()">ADD</button>
+    <button onclick="addCountry()">Submit</button>
 </body>
 
 </html>
