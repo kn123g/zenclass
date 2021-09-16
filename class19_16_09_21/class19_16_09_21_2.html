@@ -5,30 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="./script_2.js"></script>
     <title>class19_16_09_21_demo_1</title>
-    <style>
-        select {
-            width: 10em;
-            display: block;
-        }
-        
-        button {
-            background-color: rgb(231, 31, 31);
-            color: white;
-            width: 10em;
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script defer src="./script_2.js"></script>
 </head>
 
 <body>
-    New Country <input type="text" id="countryName" />
-    <select name="country" id="country">
-        <option value="india">India</option>
-        <option value="usa">USA</option>
-    </select>
-    <button onclick="addCountry()">Submit</button>
+    <form class="my-5">
+        <div class="form-group row justify-content-center">
+            <label class="col-4 text-primary" for="countryName "> New Country </label>
+            <input class="col-4" type="text" id="countryName" name="countryName" />
+        </div>
+        <div class="form-group row justify-content-center">
+            <label class="col-4 text-primary" for="country"> Country </label>
+            <select class="col-4" name="country" id="country">
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+            </select>
+        </div>
+        <div class="form-group row justify-content-center">
+            <button id="submit" class="btn-primary col-2" click="addCountry()"> Submit </button>
+        </div>
+    </form>
 </body>
 
 </html>
