@@ -1,5 +1,3 @@
-// let ul = document.getElementById('list');
-
 let info = {
     Aadhaarcard: 'xxxxxxxxxx',
     Name: 'Karthikeyan',
@@ -11,9 +9,9 @@ let info = {
 }
 
 for (let o in info) {
-    let table = document.getElementsByTagName('table')[0];
-    table.insertRow(0).insertCell(0).innerHTML(`${o}`)
-    table.insertRow(0).insertCell(1).innerHTML(`:`)
-    table.insertRow(0).insertCell(2).innerHTML(`${info[o]}`)
-        // ul.appendChild(list)
+    let table = document.getElementsByTagName('table')[0]
+    let row = table.insertRow(-1);
+    row.insertCell(-1).append(`${o}`)
+    row.insertCell(-1).append(`:`)
+    row.insertCell(-1).append(`${info[o]}`)
 }
