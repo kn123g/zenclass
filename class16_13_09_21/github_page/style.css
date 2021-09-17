@@ -1,0 +1,19 @@
+#git_icon {
+    height: 50px;
+    width: 40px;
+}
+
+body {
+    min-height: 2000px;
+    padding-top: 60px;
+}
+
+.rounded_pill {
+    border-radius: 10%;
+    height: 70vh;
+}
+
+.search {
+    width: 100%;
+    height: 10%;
+}
