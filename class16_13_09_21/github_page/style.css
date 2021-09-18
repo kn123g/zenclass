@@ -9,15 +9,16 @@
 
 body {
     padding-top: 60px;
+    height: 100vh;
 }
 
 .rounded_pill {
     border-radius: 10%;
-    height: 71vh;
+    height: 70vh;
 }
 
 .search {
-    height: 7vh;
+    height: 3rem;
     width: 70%;
     border-radius: 10px;
 }
