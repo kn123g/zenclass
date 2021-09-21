@@ -1,0 +1,108 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content {
+    margin: 1em auto;
+    background-color: #0275d8;
+    width: 100%;
+    border-radius: 10px;
+}
+
+table {
+    padding: 1em;
+}
+
+.type {
+    color: black;
+    width: 3em;
+}
+
+.data {
+    color: white;
+}
+
+footer {
+    position: fixed;
+    color: black;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer .pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 5%;
+}
+
+footer ul {
+    display: flex;
+    padding: 0;
+    margin: 1% 2%;
+}
+
+footer li {
+    display: inline-flex;
+    border-left: 1px solid rgb(155, 154, 154);
+    border-top: 1px solid rgb(155, 154, 154);
+    border-bottom: 1px solid rgb(155, 154, 154);
+    cursor: pointer;
+    font-size: small;
+    padding: 0.5em 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color: #0275d8;
+}
+
+footer li:hover {
+    background-color: #0275d8;
+    color: white;
+}
+
+footer li:active,
+.active {
+    background-color: rgb(155, 154, 154);
+    color: white;
+}
+
+footer ul .last {
+    border-right: 1px solid rgb(155, 154, 154);
+}
+
+footer .change {
+    margin: 2%;
+    color: rgb(78, 78, 78);
+}
+
+@media screen and (min-width: 1224px) {
+    .content {
+        width: 30vw;
+    }
+    footer .pagination {
+        width: 40vw;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .content,
+    footer .pagination {
+        width: 100vw;
+    }
+}
