@@ -49,17 +49,17 @@ footer .pagination {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 0 5%;
 }
 
 footer ul {
     display: flex;
     padding: 0;
     margin: 1% 2%;
+    flex-wrap: wrap;
 }
 
 footer li {
-    display: inline-flex;
+    display: inline-block;
     border-left: 1px solid rgb(155, 154, 154);
     border-top: 1px solid rgb(155, 154, 154);
     border-bottom: 1px solid rgb(155, 154, 154);
@@ -96,7 +96,7 @@ footer .change {
         width: 30vw;
     }
     footer .pagination {
-        width: 40vw;
+        width: 45vw;
     }
 }
 
@@ -104,5 +104,8 @@ footer .change {
     .content,
     footer .pagination {
         width: 100vw;
+    }
+    footer .pagination ul li {
+        font-size: xx-small;
     }
 }
