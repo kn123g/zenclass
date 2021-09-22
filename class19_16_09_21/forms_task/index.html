@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form task</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <form id="foodForm">
+                <fieldset>
+                    <legend>Food Form</legend>
+                    <label for="fname">First Name</label>
+                    <br />
+                    <input class='input' type="text" id="fname" name="firstname" placeholder="Your name.." required>
+                    <br /><br />
+
+                    <label for="lname">Last Name</label>
+                    <br />
+                    <input class='input' type="text" id="lname" name="lastname" placeholder="Your last name..">
+                    <br /><br />
+
+                    <label for="address">Address</label>
+                    <br />
+                    <textarea class='input' id="address" name="address" placeholder="Your address.." style="height:10vh" required></textarea>
+                    <br /><br />
+
+                    <label for="pincode">Pincode</label>
+                    <br />
+                    <input class='input' type="number" id="pincode" name="pincode" placeholder="Your pincode" required>
+                    <br /><br />
+
+                    <label for="gender">Gender</label>
+                    <br />
+                    <div class="gender">
+                        <input type="radio" id="male" name="gender" value="male" required>Male
+                        <input type="radio" id="femal" name="gender" value="female" required>Female
+                        <input type="radio" id="transgender" name="gender" value="transgender" required>Transgender
+                    </div>
+                    <br />
+
+                    <label for="food">Choice of food</label>
+                    <br />
+                    <div id="menuCheckbox" oninput="checkFood()">
+                        <input type="checkbox" id="idly" name="food" value='idly'> Idly
+                        <input type="checkbox" id="dosa" name="food" value='dosa'> Dosa
+                        <input type="checkbox" id="poori" name="food" value='poori'> Poori
+                        <input type="checkbox" id="pongal" name="food" value='pongal'> Pongal
+                        <input type="checkbox" id="meals" name="food" value='meals'> Meals
+                    </div>
+                    <br />
+
+                    <label for="country">Country</label>
+                    <br />
+                    <select class='input' id="country" name="country" required>
+                        <option value="" disabled selected>Select..</option>
+                        <option value="india">India</option>
+                        <option value="usa">USA</option>
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                    </select>
+                    <br /><br />
+
+                    <label for="state">State</label>
+                    <br />
+                    <select class='input' id="state" name="state" required>
+                        <option value="" disabled selected>Select..</option>
+                    </select>
+                    <br /><br />
+
+                    <button id='submit' class="submit" type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+        <div id="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Address</th>
+                        <th>Pincode</th>
+                        <th>Gender</th>
+                        <th>Foods</th>
+                        <th>Country</th>
+                        <th>State</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
