@@ -18,7 +18,7 @@ function updateContentToDOM(jsonData) {
     for (let content in jsonData.results) {
 
         let div = document.createElement('div');
-        div.className = 'col';
+        div.className = 'col-4';
         let img = document.createElement('img');
         img.src = jsonData.results[content].picture.large;
         img.className = 'img-fluid';
