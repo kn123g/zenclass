@@ -22,7 +22,6 @@ function updateContentToDOM(jsonData) {
     header.innerHTML = 'City'
     table.querySelector('thead').appendChild(header)
     for (let content in jsonData) {
-        console.log(table)
         let row = table.insertRow(-1);
         row.insertCell(-1).append(jsonData[content].name);
         row.insertCell(-1).append(jsonData[content].address.city);
