@@ -17,8 +17,9 @@ async function fetchContent() {
             row.insertCell(-1).append(jsonData[content].address.city);
         }
     } catch (e) {
-
+        let errorElement = document.createElement('p')
+        errorElement.innerHTML = e;
+        document.getElementsByClassName('container')[0].appendChild(errorElement);
     }
 
 }
-// fetchData();
