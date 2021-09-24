@@ -1,4 +1,4 @@
-async function fetchData() {
+async function fetchContent() {
     let data = await fetch('https://jsonplaceholder.typicode.com/users');
     let jsonData = await data.json();
     console.log(jsonData)
@@ -11,4 +11,4 @@ async function fetchData() {
     }
 
 }
-fetchData();
+// fetchData();
