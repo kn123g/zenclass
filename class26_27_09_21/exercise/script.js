@@ -8,6 +8,8 @@ function onFormSubmit() {
         else updateRecord(formData);
         //To reset the form with empty  space
         resetForm();
+    } else {
+        alert('fill the form')
     }
 
 }
