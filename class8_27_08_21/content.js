@@ -42,7 +42,7 @@ let ans1 =
       console.log(this.statusText);
     }
      
-    x.open('GET', 'https://restcountries.eu/rest/v2/all');
+    x.open('GET', 'https://restcountries.com/v2/all');
     x.send();`
 document.getElementById('one').innerHTML = ans1;
 
