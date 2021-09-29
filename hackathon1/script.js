@@ -61,6 +61,7 @@ function updateContentToDOM() {
         let img = document.createElement('img');
         img.src = `${url}/cat/${cats[i].id}?height=150`
         img.className = 'img-fluid rounded';
+        img.alt = "cat not loading"
         div.appendChild(img);
         let tags = document.createElement('h6');
         let tagNames = ''
