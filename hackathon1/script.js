@@ -4,7 +4,7 @@ const url = `https://cataas.com/`
 let cats;
 let currentPage = 1;
 const catsPerpage = 12;
-const catLimit = 100;
+const catLimit = 70;
 let totalCat;
 
 async function initialCatsLoad() {
