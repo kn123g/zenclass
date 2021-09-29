@@ -1,7 +1,8 @@
 const catContent = document.getElementById('catContent');
 const popup = document.getElementById('togglePopup');
+const searchCat = document.getElementById('searchCat');
 const url = `https://cataas.com/`
-let cats;
+let cats, tags;
 let currentPage = 1;
 const catsPerpage = 12;
 const catLimit = 70;
@@ -25,9 +26,9 @@ async function initialCatsLoad() {
     }
 }
 
-async function searchCat(searchInput) {
+async function searchCatByTag() {
     try {
-        const jsonData = await fetchContent(`${url}/api/cats?limit=${catLimit}&tags=${searchInput.value}`);
+        const jsonData = await fetchContent(`${url}/api/cats?limit=${catLimit}&tags=${searchCat.value}`);
         cats = jsonData;
         cleanPage();
         resetCurrentPage();
@@ -55,6 +56,7 @@ function updateContentToDOM() {
         div.className = 'col-sm-3 col-6';
         div.setAttribute('data-toggle', 'modal');
         div.setAttribute('data-target', '#myModal');
+        div.style.cursor = 'pointer';
         div.addEventListener('click', () => {
             popup.src = `${url}/cat/${cats[i].id}?width=250`;
         })
@@ -85,7 +87,6 @@ async function fetchContent(fetchURL) {
 
 function loadPagination() {
     paginationList.innerHTML = '';
-    /* Previous button appending to pagination */
     let pageList = document.createElement('li');
     pageList.className = 'page-item';
     let pageLink = document.createElement('a');
@@ -95,7 +96,6 @@ function loadPagination() {
     pageLink.href = "#";
     pageList.appendChild(pageLink)
 
-    /* adding event listener to previous button */
     pageLink.addEventListener('click', (e) => {
         if ((currentPage - 1) > 0) {
             currentPage--;
@@ -104,7 +104,6 @@ function loadPagination() {
     })
     paginationList.appendChild(pageList)
 
-    /* PageNo appending to pagination */
     length = Math.ceil(totalCat / catsPerpage);
     for (let i = 1; i <= length; i++) {
         pageList = document.createElement('li');
@@ -117,7 +116,6 @@ function loadPagination() {
         pageLink.href = "#";
         pageList.appendChild(pageLink)
 
-        /* adding event listener to pageNo buttons */
         pageLink.addEventListener('click', (e) => {
             currentPage = e.target.tabIndex;
             pageNavigate();
@@ -126,7 +124,6 @@ function loadPagination() {
         paginationList.appendChild(pageList)
     }
 
-    /* Next button appending to pagination */
     pageList = document.createElement('li');
     pageList.className = 'page-item';
     pageLink = document.createElement('a');
@@ -136,7 +133,6 @@ function loadPagination() {
     pageLink.tabIndex = -1;
     pageList.appendChild(pageLink)
 
-    /* adding event listener to Next button */
     pageLink.addEventListener('click', (e) => {
         if ((currentPage + 1) <= length) {
             currentPage++;
@@ -145,7 +141,6 @@ function loadPagination() {
     })
 
     paginationList.appendChild(pageList);
-    /* adding active to initial pageNo */
     updatePagination();
 }
 
@@ -155,7 +150,6 @@ function pageNavigate() {
     updatePagination();
 }
 
-/* Highlighting active page to pagination */
 function updatePagination() {
     let prevPage = paginationList.querySelector(`li.active`);
     prevPage ? prevPage.className = prevPage.className.replace('active', ' ') : '';
@@ -170,4 +164,84 @@ function cleanPage() {
 function resetCurrentPage() {
     currentPage = 1;
 }
-initialCatsLoad();
+
+function autocomplete(inp, arr) {
+    var currentFocus;
+    inp.addEventListener("input", function(e) {
+        var a, b, i, val = this.value;
+        closeAllLists();
+        if (!val) { return false; }
+        currentFocus = -1;
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        this.parentNode.appendChild(a);
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                });
+                a.appendChild(b);
+            }
+        }
+    });
+    inp.addEventListener("keydown", function(e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+            currentFocus++;
+            addActive(x);
+        } else if (e.keyCode == 38) {
+            currentFocus--;
+            addActive(x);
+        } else if (e.keyCode == 13) {
+            e.preventDefault();
+            if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+            }
+        }
+    });
+
+    function addActive(x) {
+        if (!x) return false;
+        removeActive(x);
+        if (currentFocus >= x.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = (x.length - 1);
+        x[currentFocus].classList.add("autocomplete-active");
+    }
+
+    function removeActive(x) {
+        for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+        }
+    }
+
+    function closeAllLists(elmnt) {
+        var x = document.getElementsByClassName("autocomplete-items");
+        for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+                x[i].parentNode.removeChild(x[i]);
+            }
+        }
+    }
+    document.addEventListener("click", function(e) {
+        closeAllLists(e.target);
+    });
+}
+
+async function tagsLoad() {
+    tags = await fetchContent(`${url}/api/tags`)
+    autocomplete(document.getElementById("searchCat"), tags);
+}
+
+function pageLoad() {
+    initialCatsLoad();
+    tagsLoad();
+}
+
+pageLoad();
