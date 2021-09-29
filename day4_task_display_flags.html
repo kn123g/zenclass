@@ -57,11 +57,11 @@
                     var imgDiv = document.createElement('div');
                     imgDiv.setAttribute('style', `display:inline-block;padding:30px`);
                     var countryName = document.createElement('lable');
-                    countryName.innerHTML = `${element.name}`;
+                    countryName.innerHTML = `${element.name.common}`;
                     countryName.setAttribute('style', `width:100%;display:block`);
                     var img = document.createElement('img');
-                    img.src = `${element.flag}`;
-                    img.alt = `${element.name}`;
+                    img.src = `${element.flags.png}`;
+                    img.alt = `${element.name.common}`;
                     img.setAttribute('width', '200px');
                     img.setAttribute('height', '100px');
                     imgDiv.appendChild(countryName)
@@ -74,7 +74,7 @@
             console.log(this.statusText);
         }
 
-        x.open('GET', 'https://restcountries.eu/rest/v2/all');
+        x.open('GET', 'https://restcountries.com/v3.1/all');
         x.send();
     </script>
 </head>

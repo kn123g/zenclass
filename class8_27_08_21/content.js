@@ -72,14 +72,20 @@ x.onload = function() {
         console.log(` %c e. Print the country which uses US Dollars as currency. `, 'color:orange')
         countries.forEach(async country => {
             let dolor = false;
-            await country.currencies.forEach(element => {
-                if (element.symbol == '$') {
-                    dolor = true;
+            try {
+                await country.currencies.forEach(element => {
+                    if (element.symbol && (element.symbol == '$')) {
+                        dolor = true;
+                    }
+                })
+
+                if (dolor) {
+                    console.log(` %c ${country.name}`, 'color:orange')
                 }
-            })
-            if (dolor) {
-                console.log(` %c ${country.name}`, 'color:orange')
+            } catch (e) {
+
             }
+
         })
     }
 }
@@ -88,5 +94,5 @@ x.onerror = function() {
     console.log(this.statusText);
 }
 
-x.open('GET', 'https://restcountries.eu/rest/v2/all');
+x.open('GET', 'https://restcountries.com/v2/all');
 x.send();
