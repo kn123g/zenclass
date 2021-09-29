@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Currency task 3 class25 24_09_21</title>
+    <title>Task 3 class25 29_09_21 cat api</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -16,31 +17,39 @@
 <body>
     <header>
         <nav class="navbar navbar-dark bg-info fixed-top">
-            <a class="navbar-brand">Find Currency</a>
+            <a class="navbar-brand">Cats</a>
             <form class="form-inline" onsubmit="event.preventDefault();" autocomplete="off">
                 <div class="input-group d-flex">
-                    <div class="input-group-prepend col-5 p-0">
-                        <span class="input-group-text w-100" id="basic-addon1">Search Country</span>
+                    <div class="input-group-prepend col-4 p-0">
+                        <span class="input-group-text w-100" id="basic-addon1">Search Cat</span>
                     </div>
-                    <input type="text" class="form-control col-8" placeholder="india" id="searchCountry" onkeyup="countryLoad(this)">
+                    <input type="text" class="form-control col-5" placeholder="#tagname" id="searchCat">
+                    <div class="input-group col-3 p-0">
+                        <button class="btn btn-success w-100" type="submit" onclick="searchCatByTag()">Search</button>
+                    </div>
                 </div>
             </form>
         </nav>
     </header>
     <section class="jumbotron mt-lg-2 mt-5">
-        <table class="table col-lg-8 col-md-3 m-auto table-bordered table-hover table-" id="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">Currency</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body d-flex justify-content-center">
+                        <img id="togglePopup" class="img-responsive" alt="cat not loading">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-start mt-4" id="catContent">
+        </div>
     </section>
-
+    <footer>
+        <nav class="fixed-bottom d-flex justify-content-lg-end justify-content-center mx-lg-5" aria-label="...">
+            <ul class="pagination" id="paginationList">
+            </ul>
+        </nav>
+    </footer>
 </body>
 
 </html>
