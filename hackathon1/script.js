@@ -37,7 +37,7 @@ async function searchCatByTag() {
             updateContentToDOM(1);
             loadPagination();
         } else {
-            throw `No cat for tag ${searchInput.value}`
+            throw `No cat for tag ${searchCat.value}`
         }
     } catch (e) {
         const errorElement = document.createElement('p')
