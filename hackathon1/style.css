@@ -31,4 +31,9 @@ a.page-link {
 
 li.page-item.active a.page-link {
     background-color: #5bc0de;
+    border-color: #5bc0de;
+}
+
+a.page-link:hover {
+    color: #5bc0de;
 }
