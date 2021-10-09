@@ -1,0 +1,121 @@
+{
+  "PricingCardContent": [
+    {
+      "title": "Free",
+      "pricing": { "currency": "$", "price": "0", "duration": "month" },
+      "details": [
+        {
+          "content": "Single User",
+          "apply": true
+        },
+        {
+          "content": "5GB Storage",
+          "apply": true
+        },
+        {
+          "content": "Unlimited Public Projects",
+          "apply": true
+        },
+        {
+          "content": "Community Access",
+          "apply": true
+        },
+        {
+          "content": "Unlimited Private Projects",
+          "apply": false
+        },
+        {
+          "content": "Dedicated Phone Support",
+          "apply": false
+        },
+        {
+          "content": "Free Subdomain",
+          "apply": false
+        },
+        {
+          "content": "Monthly Status Reports",
+          "apply": false
+        }
+      ]
+    },
+    {
+      "title": "Plus",
+      "pricing": { "currency": "$", "price": "9", "duration": "month" },
+      "details": [
+        {
+          "content": "5 Users",
+          "apply": true,
+          "strong":true
+        },
+        {
+          "content": "50GB Storage",
+          "apply": true
+        },
+        {
+          "content": "Unlimited Public Projects",
+          "apply": true
+        },
+        {
+          "content": "Community Access",
+          "apply": true
+        },
+        {
+          "content": "Unlimited Private Projects",
+          "apply": true
+        },
+        {
+          "content": "Dedicated Phone Support",
+          "apply": true
+        },
+        {
+          "content": "Free Subdomain",
+          "apply": true
+        },
+        {
+          "content": "Monthly Status Reports",
+          "apply": false
+        }
+      ]
+    },
+    {
+      "title": "PRO",
+      "pricing": { "currency": "$", "price": "49", "duration": "month" },
+      "details": [
+        {
+          "content": "Unlimited Users",
+          "apply": true,
+          "strong":true
+        },
+        {
+          "content": "150GB Storage",
+          "apply": true
+        },
+        {
+          "content": "Unlimited Public Projects",
+          "apply": true
+        },
+        {
+          "content": "Community Access",
+          "apply": true
+        },
+        {
+          "content": "Unlimited Private Projects",
+          "apply": true
+        },
+        {
+          "content": "Dedicated Phone Support",
+          "apply": true
+        },
+        {
+          "content": "Unlimited Free Subdomain",
+          "apply": true,
+          "strong":true
+        },
+        {
+          "content": "Monthly Status Reports",
+          "apply": true
+        }
+      ]
+    }
+  ]
+}
