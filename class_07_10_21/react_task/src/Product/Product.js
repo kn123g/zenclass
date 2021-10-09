@@ -67,9 +67,9 @@ render() {
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 { 
                                 this.props.details.price.range ? 
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto"  href="!#">View options</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto"  href="#!">View options</a></div>
                                 : 
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" onClick={this.updateCard} href="!#">{this.state.addToCard?'Add to cart':'Remove from Card'}</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" onClick={this.updateCard} href="#!">{this.state.addToCard?'Add to cart':'Remove from Card'}</a></div>
                                 }
                             </div>
                         </div>
