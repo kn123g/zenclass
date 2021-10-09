@@ -1,0 +1,64 @@
+{ 
+    "Products": [
+        {
+            "name":"Fancy Product",
+            "price":{
+                "range":"$40.00 - $80.00"
+            }
+        },
+        {
+            "name":"Special Item",
+            "rating":5,
+            "price":{
+                "originalPrice":"$20.00",
+                "offerPrice":"$18.00"
+            },
+            "sale":true
+        },
+        {
+            "name":"Sale Item",
+            "price":{
+                "originalPrice":"$20.00",
+                "offerPrice":"$18.00"
+            },
+            "sale":true
+        },
+        {
+            "name":"Popular Item",
+            "rating":5,
+            "price":{
+                "originalPrice":"$20.00"
+            }
+        },
+        {
+            "name":"Sale Item",
+            "price":{
+                "originalPrice":"$20.00",
+                "offerPrice":"$18.00"
+            },
+            "sale":true
+        },
+        {
+            "name":"Fancy Product",
+            "price":{
+                "range":"$120.00 - $280.00"
+            }
+        },
+        {
+            "name":"Special Item",
+            "rating":5,
+            "price":{
+                "originalPrice":"$20.00",
+                "offerPrice":"$18.00"
+            },
+            "sale":true
+        },
+        {
+            "name":"Popular Item",
+            "rating":5,
+            "price":{
+                "originalPrice":"$40.00"
+            }
+        }
+    ] 
+}
