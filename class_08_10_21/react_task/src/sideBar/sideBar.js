@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import undraw_rocket from "../shared/img/undraw_rocket.svg";
-import ScriptTag from "react-script-tag";
+// import ScriptTag from "react-script-tag";
 import { useEffect } from "react";
 // require("../shared/js/sb-admin-2.min.js");
 export default function SideBar() {
@@ -218,6 +218,7 @@ export default function SideBar() {
           className="btn btn-success btn-sm"
           href="https://startbootstrap.com/theme/sb-admin-pro"
           target="_blank"
+          rel="noreferrer" 
         >
           Upgrade to Pro!
         </a>

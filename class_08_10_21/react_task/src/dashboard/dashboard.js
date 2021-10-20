@@ -29,7 +29,7 @@ export default function Dashboard() {
       <div className="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
         <a
-          href="#"
+          href="#!"
           className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
         >
           <i className="fas fa-download fa-sm text-white-50"></i> Generate
@@ -154,7 +154,7 @@ export default function Dashboard() {
               <div className="dropdown no-arrow">
                 <a
                   className="dropdown-toggle"
-                  href="#"
+                  href="#!"
                   role="button"
                   id="dropdownMenuLink"
                   data-toggle="dropdown"
@@ -168,14 +168,14 @@ export default function Dashboard() {
                   aria-labelledby="dropdownMenuLink"
                 >
                   <div className="dropdown-header">Dropdown Header:</div>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#!">
                     Action
                   </a>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#!">
                     Another action
                   </a>
                   <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#!">
                     Something else here
                   </a>
                 </div>
@@ -201,7 +201,7 @@ export default function Dashboard() {
               <div className="dropdown no-arrow">
                 <a
                   className="dropdown-toggle"
-                  href="#"
+                  href="#!"
                   role="button"
                   id="dropdownMenuLink"
                   data-toggle="dropdown"
@@ -215,14 +215,14 @@ export default function Dashboard() {
                   aria-labelledby="dropdownMenuLink"
                 >
                   <div className="dropdown-header">Dropdown Header:</div>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#!">
                     Action
                   </a>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#!">
                     Another action
                   </a>
                   <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#!">
                     Something else here
                   </a>
                 </div>
@@ -415,13 +415,13 @@ export default function Dashboard() {
               </div>
               <p>
                 Add some quality, svg illustrations to your project courtesy of{" "}
-                <a target="_blank" rel="nofollow" href="https://undraw.co/">
+                <a target="_blank" rel="noreferrer nofollow" href="https://undraw.co/">
                   unDraw
                 </a>
                 , a constantly updated collection of beautiful svg images that
                 you can use completely free and without attribution!
               </p>
-              <a target="_blank" rel="nofollow" href="https://undraw.co/">
+              <a target="_blank" rel="noreferrer nofollow" href="https://undraw.co/">
                 Browse Illustrations on unDraw &rarr;
               </a>
             </div>
