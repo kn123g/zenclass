@@ -1,5 +1,5 @@
 import undraw_profile from '../shared/img/undraw_profile.svg';
-import undraw_profile_1 from '../shared/img/undraw_profile_1.svg';
+// import undraw_profile_1 from '../shared/img/undraw_profile_1.svg';
 import undraw_profile_2 from '../shared/img/undraw_profile_2.svg';
 import undraw_profile_3 from '../shared/img/undraw_profile_3.svg';
 
