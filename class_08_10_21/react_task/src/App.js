@@ -1,13 +1,13 @@
 import "./App.css";
 import "./shared/vendor/fontawesome-free/css/all.min.css";
 import "./shared/css/sb-admin-2.min.css";
-import ScriptTag from "react-script-tag";
+// import ScriptTag from "react-script-tag";
 import {
   Route,
   Switch,
   BrowserRouter as Router,
   Redirect,
-  NavLink,
+  // NavLink,
 } from "react-router-dom";
 import Sidebar from "./sideBar/sideBar";
 import TopBar from "./topBar/topBar";
