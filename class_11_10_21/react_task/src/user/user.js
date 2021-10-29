@@ -2,7 +2,7 @@ import {useState} from "react"
 import {useDispatch, useSelector} from "react-redux";
 import {setUser as updateUserAction} from '../redux/actions/userActions'
 export default function User({history,match}){
-  const userSelector = (useSelector(state => state.allUsers.find((user) => user.id === match.params.userId)));
+  const userSelector = (useSelector(state => state.allUsers.find((user) => user.id === +match.params.userId)));
     let [user,setUser] = useState(userSelector)
     const dispatch = useDispatch();
     const updateUser =(e)=>{
