@@ -1,0 +1,7 @@
+.deleteRow:hover{
+    cursor: pointer;
+}
+
+.editRow:hover{
+    cursor: pointer;
+}
