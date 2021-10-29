@@ -14,7 +14,7 @@ export const userReducer =(state=initialState,{type,payload})=>{
 
         case ActionTypes.SET_USER : 
         for(let i=0;i<state.length;i++){
-            if(state[i].id == payload.id){
+            if(state[i].id === payload.id){
                 state[i] = payload;
                 break;
             }
@@ -29,7 +29,7 @@ export const userReducer =(state=initialState,{type,payload})=>{
         
         case ActionTypes.REMOVE_SELECTED_USER:
             for(let i=0;i<state.length;i++){
-                if(state[i].id == payload){
+                if(state[i].id === payload){
                     state.splice(i,1)
                     break;
                 }

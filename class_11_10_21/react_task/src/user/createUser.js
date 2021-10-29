@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { createUser as createUserAction } from "../redux/actions/userActions";
 export default function CreateUser({ history, match }) {
   let [user, setUser] = useState();

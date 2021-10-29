@@ -1,5 +1,5 @@
 import  './users.css';
-import { useEffect,useState,useReducer } from "react";
+import { useEffect,useState } from "react";
 // import { DataGrid } from "@mui/x-data-grid";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -11,7 +11,7 @@ import Paper from '@mui/material/Paper';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {useDispatch, useSelector} from "react-redux";
-import {getUsers,deleteUsers} from '../redux/actions/userActions'
+import {deleteUsers} from '../redux/actions/userActions'
 
 export default function Users({history,location}) {
   const usersSelector = (useSelector(state => state.allUsers));
