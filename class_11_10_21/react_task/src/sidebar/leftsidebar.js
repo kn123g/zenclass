@@ -17,8 +17,8 @@ export default function SideBar(){
         return(
         <List>
             {[
-            {"text":'Dashboard',"icon":DashboardIcon,"path":"/users"},
-            {"text":'Create User','icon':AddIcon,"path":"/create"},
+            {"text":'Dashboard',"icon":DashboardIcon,"path":"/home/users"},
+            {"text":'Create User','icon':AddIcon,"path":"/home/create"},
             // {"text":'Edit User','icon':EditIcon,"path":"/users:userId"}
             ].map((list, index) => (
               <NavLink to={list.path} className='nav' activeClassName='active-nav' exact key={list.text}>

@@ -17,28 +17,26 @@ function App() {
     <Router>
       <Provider store={store}>
       <Switch>
-        <Route path="/">
+        <Route path="/home">
           <div className="row">
             <div className="col-2">
               <LeftSideBar />
             </div>
             <div className="col-10">
-              <Route path="/users" exact component={Users}>
+              <Route path="/home/users" exact component={Users}>
               </Route>
-              <Route path="/users/:userId" exact component={User}>
+              <Route path="/home/users/:userId" exact component={User}>
               </Route>
-              <Route path="/create" exact component={CreateUser}> 
-
+              <Route path="/home/create" exact component={CreateUser}> 
               </Route>
-              <Route path="**" exact>
-              <Redirect to="/users"/>
-              </Route>
+              <Redirect to="/home/users"/>
             </div>
           </div>
+        </Route>        
+        <Route path="/" exact>
+          <Redirect to="/home/users"/>
         </Route>
-        <Route path="**" exact>
-          <Redirect to="/users"/>
-        </Route>
+        <Route path="**"  render={()=>{return <h1>Not Found</h1>}}/>
       </Switch>
       </Provider>
     </Router>

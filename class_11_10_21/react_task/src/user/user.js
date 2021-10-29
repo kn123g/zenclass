@@ -8,7 +8,7 @@ export default function User({history,match}){
     const updateUser =(e)=>{
       e.preventDefault();
         dispatch(updateUserAction(user));
-        history.push("/users")
+        history.push("/home/users")
     }
     const userChange = (key,value)=>{
         setUser((prev) => {return {...prev,[key]:value}})

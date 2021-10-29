@@ -7,7 +7,7 @@ export default function CreateUser({ history, match }) {
   const createUserHandler = (e) => {
     e.preventDefault();
     dispatch(createUserAction(user));
-    history.push("/users");
+    history.push("/home/users");
   };
   const userChange = (key, value) => {
     setUser((prev) => {
