@@ -1,5 +1,5 @@
-CREATE DATABASE GUVI;
-USE GUVI;
+CREATE DATABASE zenclass;
+USE zenclass;
 
 CREATE TABLE mentors(mentor_id int primary key,mentor_name varchar(150));
 INSERT INTO mentors VALUES (1,'Dhoni');
