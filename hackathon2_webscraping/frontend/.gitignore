@@ -1,14 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/hackathon2_webscraping/backend/node_modules
-/hackathon2_webscraping/frontend/node_modules
 /node_modules
 /.pnp
 .pnp.js
-
-#Assignment nodemodules
-/class_06_10_21/react_task/node_modules
 
 # testing
 /coverage
