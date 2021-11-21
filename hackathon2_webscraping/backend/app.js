@@ -1,24 +1,31 @@
 const express = require('express');
 const app = express();
-const mongoose = require("mongoose");
+const categoriesRouter = require("./routes/categories"); 
+const mongodb = require('./db_connection')
+const load_products = require('./module/load_store')
 
-// mongoose.set('useNewUrlParser', true);
-mongoose.connect("mongodb+srv://webscraping:" + "webscraping"+
-//process.env.MONGO_ATLAS_PASSWORD+ 
-"@cluster0.mziya.mongodb.net/Cluster0?retryWrites=true&w=majority")
-  .then(()=>{
-    console.log("Databse Connected Successfully");
-  })
-  .catch(()=>{
-    console.log("Databse Connection failed");
-  });
+mongodb.connect();
 
+load_products();
+setInterval(()=>{
+  load_products();
+},4320000);
 
 app.listen(8000,()=>{
     console.log('server created')
 });
 
+app.use((req,res,next)=>{
+  res.setHeader('Access-Control-Allow-Origin',"*");
+  res.setHeader('Access-Control-Allow-Headers',"Origin,X-Requested-with,Content-Type,Accept,Authorization");
+  res.setHeader('Access-Control-Allow-Methods',"GET,POST,PATCH,DELETE,PUT,OPTIONS");
+//  res.append('Access-Control-Allow-Credentials', 'true');
+  next();
+});
 app.use(express.json());
-app.use('/categories',(req,res,next)=>{
-    res.status(200).json(['mobiles','tv','tshirts']);
-})
+
+app.use('/categories',categoriesRouter);
+app.use('/',(req,res,next)=>{
+  res.status(200).json({"developer":"karthikeyan"});
+  // next();
+});
