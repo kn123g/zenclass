@@ -3,8 +3,58 @@ import './Header.css';
 import { useEffect, useState, useRef} from "react";
 import axios from "axios";
 import {backend_base_url} from '../constants/external_api';
+import * as React from 'react';
+import { styled, alpha } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import InputBase from '@mui/material/InputBase';
+import SearchIcon from '@mui/icons-material/Search';
+import Button from '@mui/material/Button';
 
-export default function Header() {
+const Search = styled('div')(({ theme }) => ({
+  position: 'relative',
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  '&:hover': {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginRight: theme.spacing(2),
+  marginLeft: 0,
+  width: '100%',
+  [theme.breakpoints.up('sm')]: {
+    marginLeft: theme.spacing(3),
+    width: 'auto',
+  },
+}));
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: '100%',
+  position: 'absolute',
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: 'inherit',
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: '20ch',
+    },
+  },
+}));
+
+
+export default function Header(props) {
   const [categories, setCategories] = useState([]);
   const [is_category_search_open, setIsCategorySearchOpen] = useState(false);
   const [search_category_text,setSearchCategoryText] = useState('');
@@ -51,53 +101,54 @@ export default function Header() {
     setIsCategorySearchOpen(true);
   }
 
-
   return (
-    <header>
-      <nav className="navbar navbar-dark bg-info fixed-top">
-        <a href="#!" className="navbar-brand">
-          Web Scraping
-        </a>
-        <form
-          className="form-inline col-4"
-          onSubmit={(e)=>{e.preventDefault()}}
-          autoComplete="off"
-        >
-          <div className="input-group col-12">
-            <div className="input-group-prepend col-3 p-0">
-              <span className="input-group-text w-100" id="basic-addon1">
-                Search
-              </span>
-            </div>
-            <input type="text" 
-            className="form-control col-6" 
-            placeholder="" id="search" 
-            value={search_category_text}
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="fixed">
+        <Toolbar>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ display: { xs: 'none', sm: 'block' } }}
+          >
+            Web Scraping
+          </Typography>
+          
+          <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+              value={search_category_text}
             // onBlur={(e)=>{closeSearch()}}
             onFocus={(e)=>{openSearch()}}
             onChange={(e)=>{searchCategory(e.target.value);setSearchCategoryText(e.target.value); e.preventDefault();}}
             />
-            <div className="input-group col-3 p-0">
-              <button
-                className="btn btn-success w-100"
-                type="submit"
-                onClick={searchCategory}
-              >
-                Search
-              </button>
-              
-            </div>
-           { 
+            { 
            is_category_search_open ? 
            <div id="autocomplete" className="autocomplete-items" >
                 {categories.map((element,index)=>{
-                    return <div className="p-2" onClick={selectedCategory} key={index}>{element.name}<br/></div>
-                })}
+                    return (
+                            <div  className="p-2" 
+                                  onClick={selectedCategory} 
+                                  key={index}
+                                  style={{color:'black'}}>
+                                    {element.name}
+                                  <br/>
+                            </div>
+                )})}
             </div>
             : null}
-          </div>
-        </form>
-      </nav>
-    </header>
+            
+          <Button style={{color:'white'}} onClick={()=>props.searchHandle(search_category_text)}>Search</Button>
+          </Search>            
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }

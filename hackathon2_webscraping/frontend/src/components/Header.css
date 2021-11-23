@@ -7,14 +7,13 @@
     top: 100%;
     left: 0;
     right: 0;
-    margin:0 3.5%;
 }
 
 .autocomplete-items div {
     cursor: pointer;
     background-color: #fff;
     border-bottom: 1px solid #d4d4d4;
-    height:40px;
+    padding: 2% 5%;
 }
 
 .autocomplete-items div:hover {
