@@ -44,7 +44,7 @@ mongodb
 
 
 app.listen(process.env.PORT || 3000,()=>{
-    console.log('server created')
+    console.log(`server created on port ${process.env.PORT}`)
 });
 
 app.use((req,res,next)=>{
