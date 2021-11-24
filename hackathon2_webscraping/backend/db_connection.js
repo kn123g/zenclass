@@ -5,10 +5,7 @@ exports.connect = () => {
     // mongoose.set('useNewUrlParser', true);
    return mongoose
       .connect(
-        "mongodb+srv://webscraping:" +
-          "webscraping" +
-          //process.env.MONGO_ATLAS_PASSWORD+
-          "@cluster0.mziya.mongodb.net/webscraping?retryWrites=true&w=majority"
+        `mongodb+srv://${process.env.MONGO_ATLAS_USERNAME}:${process.env.MONGO_ATLAS_PASSWORD}@${process.env.MONGO_ATLAS_CLUSTER}/${process.env.MONGO_ATLAS_DATABASE}?retryWrites=true&w=majority`
       )
   } catch (error) {
     console.error(error);
