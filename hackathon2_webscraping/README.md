@@ -1,5 +1,18 @@
 # Backend
-https://webscraper-zenclass.herokuapp.com/
+BASE URL &emsp; https://webscraper-zenclass.herokuapp.com/
+<br/>
+GET &emsp; /categories/
+<br/>
+GET &emsp; /categories/<key> &emsp; /categories/m
+<br/>
+GET &emsp; /countproducts/<category> &emsp; /countproducts/books
+<br/>
+GET &emsp; /products/<category>/<pageno> &emsp; /products/books/1
+<br/>
+GET &emsp; /products/products &emsp; /products
+<br/>
+GET &emsp; /products/products &emsp; /products
+
 ## Add Database details into process environment
 MONGO_ATLAS_CLUSTER		&emsp;		<cluster_hostname>
 <br />
