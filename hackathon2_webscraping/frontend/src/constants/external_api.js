@@ -1,1 +1,1 @@
-export const backend_base_url = `http://localhost:8000/`
+export const backend_base_url =  `https://webscraper-zenclass.herokuapp.com/`
