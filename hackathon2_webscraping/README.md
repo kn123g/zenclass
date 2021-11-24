@@ -3,13 +3,13 @@ BASE URL &emsp; https://webscraper-zenclass.herokuapp.com/
 <br/>
 GET &emsp; /categories/
 <br/>
-GET &emsp; /categories/<search_key> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; /categories/m
+GET &emsp; /categories/<search_key> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; /categories/m
 <br/>
-GET &emsp; /countproducts/<category_name> &emsp;&emsp;&emsp;&emsp; /countproducts/books
+GET &emsp; /countproducts/<category_name> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; /countproducts/books
 <br/>
 GET &emsp; /products/<category_name>/<page_number> &emsp; /products/books/1
 <br/>
-GET &emsp; /products/products &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; /products
+GET &emsp; /products/products &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; /products
 
 ## Add Database details into process environment
 MONGO_ATLAS_CLUSTER		&emsp;		<cluster_hostname>
