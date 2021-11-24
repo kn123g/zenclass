@@ -1,4 +1,5 @@
 # Backend
+https://webscraper-zenclass.herokuapp.com/
 ## Add Database details into process environment
 MONGO_ATLAS_CLUSTER		&emsp;		<cluster_hostname>
 <br />
@@ -16,6 +17,7 @@ NODE_OPTIONS 			&emsp;		--max_old_space_size=1024
 PROJECT_PATH 			&emsp;		backend
 
 # Frontend
+https://zenclass-hackathon2.netlify.app/
 ## change backend base URL in below path before build
 frontend/src/constants/external_api.js file
 
