@@ -16,12 +16,16 @@ async function load() {
     );
     await categories.forEach(async (category) => {
       try {
-        Promise.all([
-            getFromFlipkart(category.name),
-            getFromSnapdeal(category.name),
-            getFromAmazon(category.name)])
-        .then(()=>{
-        })
+      // commanded below codes for avaiding R15 memory error in Heroku 
+      //   Promise.all([
+      //       getFromFlipkart(category.name),
+      //       getFromSnapdeal(category.name),
+      //       getFromAmazon(category.name)])
+      //   .then(()=>{
+      //   })
+            await getFromFlipkart(category.name);
+            await getFromSnapdeal(category.name);
+            await getFromAmazon(category.name);
       } catch (err) {
         console.error(err);
       } finally {
