@@ -23,6 +23,18 @@ MONGO_ATLAS_USERNAME	&emsp;		<database_username>
 MONGO_ATLAS_PASSWORD	&emsp;		<database_password>
 <br />
 
+## use nodemon.json in backend root path for dev environment setup
+```
+{
+    "env": {
+        "MONGO_ATLAS_CLUSTER" :   <cluster_hostname>,
+        "MONGO_ATLAS_DATABASE" :  <database_name>,
+        "MONGO_ATLAS_USERNAME" :  <database_username>,
+        "MONGO_ATLAS_PASSWORD" :  <database_password>
+    }
+}
+```
+
 
 ## Heruko deployment process environment
 NODE_OPTIONS 			&emsp;		--max_old_space_size=1024
