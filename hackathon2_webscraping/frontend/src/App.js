@@ -19,6 +19,7 @@ function App() {
 
   const searchHandle =(search_text)=>{
     setSearch(search_text);
+    setPage(1);
     axios.get(`${backend_base_url}products/${search_text}/${page}`)
     .then((response)=>{
       setProducts(response.data.products)
