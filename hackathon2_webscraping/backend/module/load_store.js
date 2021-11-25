@@ -39,18 +39,18 @@ async function load() {
 
 async function getFromFlipkart(category) {
   try {
-    const response = await axios.get(
+    let response = await axios.get(
       `https://www.flipkart.com/search?q=${category}`
     );
-    const $ = await cheerio.load(response.data);
-    $("._2kHMtA").each(function (i, element) {
+    let $ = await cheerio.load(response.data);
+    await $("._2kHMtA").each(function (i, element) {
       try {
         let product_title = $(this).find("._4rR01T").text();
         let product_image = $(this).find("._396cs4").attr("src");
         let product_rating = $(this).find("._3LWZlK").text();
         let product_offer_price = $(this).find("._30jeq3").text();
         let product_original_price = $(this).find("._3I9_wc").text();
-        const product = new Product({
+        let product = new Product({
           image: product_image,
           title: product_title,
           rating: +product_rating,
@@ -66,6 +66,9 @@ async function getFromFlipkart(category) {
           })
           .catch((err) => {
             console.log("flipkart product failed to load ");
+          })
+          .finally(() => {
+            // product = null;
           });
       } catch (error) {
         console.log(
@@ -78,14 +81,14 @@ async function getFromFlipkart(category) {
       }
     });
 
-    $("._4ddWXP").each(function (i, element) {
+    await $("._4ddWXP").each(function (i, element) {
       try {
         let product_title = $(this).find(".s1Q9rs").text();
         let product_image = $(this).find("._396cs4").attr("src");
         let product_rating = $(this).find("._3LWZlK").text();
         let product_offer_price = $(this).find("._30jeq3").text();
         let product_original_price = $(this).find("._3I9_wc").text();
-        const product = new Product({
+        let product = new Product({
           image: product_image,
           title: product_title,
           rating: +product_rating,
@@ -102,6 +105,9 @@ async function getFromFlipkart(category) {
           })
           .catch((err) => {
             console.log("flipkart product failed to load ");
+          })
+          .finally(() => {
+            // product = null;
           });
       } catch (error) {
         console.log(
@@ -113,6 +119,9 @@ async function getFromFlipkart(category) {
         );
       }
     });
+    
+    $ = null;
+    response =null;
   } catch (errors) {
     console.error(errors);
   }
@@ -120,9 +129,9 @@ async function getFromFlipkart(category) {
 
 async function getFromAmazon(category) {
   try {
-    const response = await axios.get(`https://www.amazon.in/s?k=${category}`);
-    const $ = cheerio.load(response.data);
-    $(".s-result-item").each(function (i, element) {
+    let response = await axios.get(`https://www.amazon.in/s?k=${category}`);
+    let $ = cheerio.load(response.data);
+    await $(".s-result-item").each(function (i, element) {
       try {
         let product_title = $(this).find("h2 span").text();
         let product_image = $(this).find(".s-image").attr("src");
@@ -131,7 +140,7 @@ async function getFromAmazon(category) {
         let product_original_price;
         product_offer_price = $(this).find("span.a-offscreen").first().text();
         product_original_price = $(this).find("span.a-offscreen").last().text();
-        const product = new Product({
+        let product = new Product({
           image: product_image,
           title: product_title,
           rating: +product_rating,
@@ -147,6 +156,9 @@ async function getFromAmazon(category) {
           })
           .catch((err) => {
             console.log("amazon product failed to load ");
+          })
+          .finally(() => {
+            // product = null;
           });
       } catch (error) {
         console.log(
@@ -158,6 +170,9 @@ async function getFromAmazon(category) {
         );
       }
     });
+    $ = null;
+    response =null;
+
   } catch (error) {
     console.error(error);
   }
@@ -165,14 +180,14 @@ async function getFromAmazon(category) {
 
 async function getFromSnapdeal(category) {
   try {
-    const response = await axios.get(
+    let response = await axios.get(
       `https://www.snapdeal.com/search?keyword=${category}`
     );
     console.log(
       "snapdeal category " + category + "  response status" + response.status
     );
-    const $ = cheerio.load(response.data);
-    $(".product-tuple-listing").each(function (i, element) {
+    let $ = cheerio.load(response.data);
+    await $(".product-tuple-listing").each(function (i, element) {
       try {
         let product_title = $(this).find(".product-title").text();
         let product_image = $(this).find("source.product-image").attr("srcset");
@@ -188,7 +203,7 @@ async function getFromSnapdeal(category) {
           .find(".lfloat.product-price")
           .last()
           .text();
-        const product = new Product({
+        let product = new Product({
           image: product_image,
           title: product_title,
           rating: +product_rating,
@@ -204,6 +219,9 @@ async function getFromSnapdeal(category) {
           })
           .catch((err) => {
             console.log("snapdeal product failed to load ");
+          })
+          .finally(() => {
+            // product = null;
           });
       } catch (error) {
         console.log(
@@ -215,7 +233,10 @@ async function getFromSnapdeal(category) {
         );
       }
     });
-  } catch (error) {
+    
+    $ = null;
+    response =null;
+    } catch (error) {
     console.error(error);
   }
 }

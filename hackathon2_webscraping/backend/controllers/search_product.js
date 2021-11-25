@@ -6,7 +6,7 @@ exports.getProducts = (req,res)=>{
     .skip(((+req.params.pageno) -1) * 12)
     .limit(12).sort( { title: 1 } )
     .then(documents=>{
-        console.log(documents);
+        // console.log(documents);
         res.status(200).json({
           message : "Products fetched Successfully",
           products : documents

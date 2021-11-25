@@ -18,7 +18,7 @@ function load_products() {
   });
 
   child.on("close", () => {
-    console.log("closing parent");
+    console.log("closing child");
   });
   child.on('error', (err) => {
     console.log(err);
