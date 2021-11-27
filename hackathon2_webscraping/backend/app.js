@@ -3,7 +3,8 @@ const app = express();
 const categoriesRouter = require("./routes/categories"); 
 const productsRouter = require("./routes/product"); 
 const productsCountRouter = require("./routes/product_count"); 
-const mongodb = require('./db_connection')
+const mongodb = require('./db_connection');
+var cors = require('cors')
 // const load_products = require('./module/load_store')
 const {fork} = require("child_process");
 
@@ -33,9 +34,11 @@ mongodb
   .connect()
   .then(() => {
     console.log("Database Connected Successfully");
-    load_products();
+    //commanded because heruko free dyno space is not enough to run product load
+    // load_products();
     setInterval(() => {
-      load_products();
+      //commanded because heruko free dyno space is not enough to run product load
+      // load_products();
     }, 4320000);
   })
   .catch(() => {
@@ -47,6 +50,8 @@ app.listen(process.env.PORT || 3000,()=>{
     console.log(`server created on port ${process.env.PORT}`)
 });
 
+// any one can access
+app.use(cors());
 app.use((req,res,next)=>{
   res.setHeader('Access-Control-Allow-Origin',"*");
   res.setHeader('Access-Control-Allow-Headers',"Origin,X-Requested-with,Content-Type,Accept,Authorization");
