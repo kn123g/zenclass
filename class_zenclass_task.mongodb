@@ -1,0 +1,186 @@
+use zenclass;
+db.users.insertMany([
+    {student_id:1,'student_name':'Mohammed',student_email:'Mohammed@mail.com',student_gender:'male',mentor:1},
+    {student_id:2,'student_name':'Abhinav',student_email:'Abhinav-chubb@mail.com',mentor:3},
+    {student_id:3,'student_name':'Akanksha',student_email:'Akanksha@mail.com',student_gender:'male',mentor:1},
+    {student_id:4,'student_name':'Arya',student_email:'Arya@mail.com',student_gender:'female',mentor:2},
+    {student_id:10,'student_name':'Mohammesdd',student_email:'Mohammasded@mail.com',student_gender:'female',mentor:4},
+    {student_id:11,'student_name':'karthi',student_email:'karthi@mail.com',student_gender:'male'},
+]);
+
+db.codekata.insertMany([
+    {program_name:'number problem'},
+    {program_name:'array problem'},
+    {program_name:'string problem'},
+    {program_name:'Mathematics'},
+    {program_name:'Looping'}
+])
+db.attendance.insertMany([
+    {sudent_id:2,session_date:new Date()},
+    {sudent_id:1,session_date:new Date()},
+    {sudent_id:3,session_date:new Date('2020-9-28')},
+    {sudent_id:1,session_date:new Date('2019-8-29')},
+    {sudent_id:2,session_date:new Date('2020-9-29')},
+    {sudent_id:4,session_date:new Date('2021-6-29')}
+]);
+
+
+db.topics.insertMany([
+    {topic_id:1,topic_name:'sql'},
+    {topic_id:2,topic_name:'html'},
+    {topic_id:3,topic_name:'css'},
+    {topic_id:4,topic_name:'react'},
+    {topic_id:5,topic_name:'node'},
+    {topic_id:6,topic_name:'mongodb'}
+])
+
+db.tasks.insertMany([
+    {task_id :1,task_name :'crud operation using react'},
+    {task_id :2,task_name :'design hotel website'},
+    {task_id :3,task_name :'mysql DDL & DML'},
+    {task_id :4,task_name :'mysql DQL'},
+    {task_id :5,task_name :'javascript map,filter,reduce'}
+])
+
+db.company_drives.insertMany([
+    {company_name:'freshworks',drive_date:new Date('2021-6-29')},    
+    {company_name:'ZOHO',drive_date:new Date('2021-9-09')},
+    {company_name:'amazon',drive_date:new Date('2020-6-04')},
+    {company_name:'paypal',drive_date:new Date('2021-5-06')},
+    {company_name:'TCS',drive_date:new Date('2021-7-12')},
+     {company_name:'Infosys',drive_date:new Date('2020-10-20')}
+])
+
+db.mentors.insertMany([
+    {mentor_id :1,mentor_name :'Dhoni'},
+    {mentor_id :2,mentor_name :'Sachin'},
+    {mentor_id :3,mentor_name :'Dravid'},
+    {mentor_id :4,mentor_name :'Ganguly'},
+    {mentor_id :5,mentor_name :'Yuvi'}
+])
+
+db.class.insertMany([
+    {date:new Date('2020-10-28'),task_id:5},
+    {date:new Date('2020-10-05'),topic_id:6},
+    {date:new Date('2020-10-08'),task_id:2},
+    {date:new Date('2020-10-25'),topic_id:1},
+    {date:new Date('2020-12-25'),topic_id:4},
+    {date:new Date('2020-1-25'),topic_id:4},
+    {date:new Date('2020-1-25'),topic_id:1}
+    ])
+// db.users.find()
+// db.codekata.find();
+
+//Find all the topics and tasks which are thought in the month of October
+db.class.aggregate([
+    // {$match:{date:{$eq:}}},
+    {
+        $lookup:{
+            from:'topics',
+            localField:'topic_id',
+            foreignField:'topic_id',
+            as:'topic'
+        }
+        
+    },
+    {
+        $lookup:{
+            from:'tasks',
+            localField:'task_id',
+            foreignField:'task_id',
+            as:'task'
+        }
+    },
+    // { 
+    //     $unwind:'$topic'
+    // },
+    // { 
+    //     $unwind:'$task'
+    // },
+    {
+        $addFields: {"task": "$task.task_name","topic": "$topic.topic_name"}
+    },
+    {
+        $project:{_id:0,date:1,topic:1,task:1,month: {$month: '$date'}}
+    },
+    {$match: {month: 10}},
+    {
+        $project:{month:0}
+    },
+]);
+
+// Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+db.company_drives.find({
+    $and:[
+        {drive_date:{$gte:new Date('2020-10-15')}},
+        {drive_date:{$lte:new Date('2020-10-30')}}
+    ]
+});
+
+// Find all the company drives and students who are appeared for the placement.
+db.placement.insertMany([
+    {student_id:1,placement_id: ObjectId("61a4daf5fa64133d7681ad09")},
+    {student_id:2,placement_id: ObjectId("61a4dcb3fa64133d7681ad0e")},
+    {student_id:4,placement_id: ObjectId("61a4daf5fa64133d7681ad0d")},
+    {student_id:10,placement_id: ObjectId("61a4daf5fa64133d7681ad0b")},
+    {student_id:1,placement_id: ObjectId("61a4daf5fa64133d7681ad0a")},
+    {student_id:2,placement_id: ObjectId("61a4daf5fa64133d7681ad0a")},
+    {student_id:4,placement_id: ObjectId("61a4daf5fa64133d7681ad0a")},
+])
+
+// Find the number of problems solved by the user in codekata
+db.placement.aggregate([
+    {
+        $lookup:{
+            from:'company_drives',
+            localField:'placement_id',
+            foreignField:'_id',
+            as:'drive'
+        }
+        
+    },
+    {
+        $lookup:{
+            from:'users',
+            localField:'student_id',
+            foreignField:'student_id',
+            as:'student'
+        }
+    },
+    {
+        $addFields: {"student": "$student.student_name","drive": "$drive.company_name"}
+    },
+    {
+        $project:{_id:0,student_id:0,placement_id:0}
+    }
+])
+
+// Find all the mentors with who has the mentee's count more than 2
+ db.mentors.aggregate([
+    {
+        $lookup:{
+            from:'users',
+            localField:'mentor_id',
+            foreignField:'mentor',
+            as:'students'
+        }
+        // $match:{'mentor_name':'Yuvi'}
+    },
+    {
+        $unwind : {
+            path: "$students"
+        }
+    },
+    {
+        $addFields: {"student": "$students.student_name"}
+    },
+    { 
+        $project: { _id: 0,students:0 } 
+    },
+    {
+        $group: { _id: '$mentor_name', count: { $sum: 1 } },
+    },
+    {
+        $match:{count : {$gte:2}}
+    }
+])
