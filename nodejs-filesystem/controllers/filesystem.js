@@ -13,7 +13,7 @@ exports.fetchFiles = (req,res)=>{
     fs.readdir(directoryPath,async function (err, files) {
         if (err) {
           res.status(500).send({
-            message: "Unable to scan files!",
+            message: "Unable to scan files! May be no files exist",
           });
         }
     
