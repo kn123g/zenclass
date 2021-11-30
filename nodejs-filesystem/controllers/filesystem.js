@@ -9,7 +9,7 @@ exports.createFile = (req,res)=>{
     res.json({message: `Saved! File ${file_name}.txt`}).status(200);
 }
 exports.fetchFiles = (req,res)=>{
-    let directoryPath = `${__dirname}\\..\\files\\`;
+    let directoryPath = `${__dirname}/../files/`;
     console.log(`scanning path  ${directoryPath}`)
     fs.readdir(directoryPath,async function (err, files) {
         if (err) {
