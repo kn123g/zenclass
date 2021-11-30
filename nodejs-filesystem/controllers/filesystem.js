@@ -3,10 +3,16 @@ require('express-zip');
 exports.createFile = (req,res)=>{
     let file_name = new Date().toLocaleString().split(' ').join('_').split('/').join('_').split(':').join('_').split(',').join('');
     fs.writeFile(`${__dirname}/../files/${file_name}.txt`, file_name, function (err) {
-        if (err) throw err;
-        console.log(`Saved! File ${file_name}.txt`);
+        if (err) {
+            console.log(`failed to save ! File ${file_name}.txt`);
+            res.json({message: `failed to save ! File ${file_name}.txt`}).status(200);
+            throw err;
+        }
+        else{        
+            console.log(`Saved! File ${file_name}.txt`);
+            res.json({message: `Saved! File ${file_name}.txt`}).status(200);
+        }
     });
-    res.json({message: `Saved! File ${file_name}.txt`}).status(200);
 }
 exports.fetchFiles = (req,res)=>{
     let directoryPath = `${__dirname}/../files/`;
