@@ -10,6 +10,7 @@ exports.createFile = (req,res)=>{
 }
 exports.fetchFiles = (req,res)=>{
     let directoryPath = `${__dirname}\\..\\files\\`;
+    console.log(`scanning path  ${directoryPath}`)
     fs.readdir(directoryPath,async function (err, files) {
         if (err) {
           res.status(500).send({
