@@ -2,7 +2,7 @@ const fs = require('fs');
 require('express-zip');
 exports.createFile = (req,res)=>{
     let file_name = new Date().toLocaleString().split(' ').join('_').split('/').join('_').split(':').join('_').split(',').join('');
-    fs.writeFile(`${__dirname}\\..\\files\\${file_name}.txt`, file_name, function (err) {
+    fs.writeFile(`${__dirname}/../files/${file_name}.txt`, file_name, function (err) {
         if (err) throw err;
         console.log(`Saved! File ${file_name}.txt`);
     });
