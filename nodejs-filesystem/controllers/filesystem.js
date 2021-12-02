@@ -1,18 +1,21 @@
 const fs = require('fs');
 require('express-zip');
-exports.createFile = (req,res)=>{
-    let file_name = new Date().toLocaleString().split(' ').join('_').split('/').join('_').split(':').join('_').split(',').join('');
-    fs.writeFile(`${__dirname}/../files/${file_name}.txt`, file_name, function (err) {
-        if (err) {
-            console.log(`failed to save ! File ${file_name}.txt`);
-            res.json({message: `failed to save ! File ${file_name}.txt`}).status(200);
-            throw err;
-        }
-        else{        
-            console.log(`Saved! File ${file_name}.txt`);
-            res.json({message: `Saved! File ${file_name}.txt`}).status(200);
-        }
-    });
+exports.createFile = async (req,res)=>{
+  let result;
+    if (fs.existsSync(`${__dirname}/../files/`)) {
+      result = await writeFile()
+      res.json(result).status(200);
+    }
+    else{
+      fs.promises.mkdir(`${__dirname}/../files/`, { recursive: true })
+      .then(async ()=>{
+        result = await writeFile()
+        res.json(result).status(200);
+      })
+      .catch(console.error);
+    }
+
+    
 }
 exports.fetchFiles = (req,res)=>{
     let directoryPath = `${__dirname}/../files/`;
@@ -34,4 +37,25 @@ exports.fetchFiles = (req,res)=>{
         });
         res.zip(fileInfos);
       });
+}
+
+async function writeFile(){
+  let file_name = new Date().toLocaleString().split(' ').join('_').split('/').join('_').split(':').join('_').split(',').join('');
+  let result ;
+  await new Promise((resolve, reject) => {
+    fs.writeFile(`${__dirname}/../files/${file_name}.txt`, file_name, function (err) {
+    if (err) {
+        console.log(`failed to save ! File ${file_name}.txt`);
+        result = {message: `failed to save ! File ${file_name}.txt`};
+        resolve()
+        // throw err;
+    }
+    else{        
+        console.log(`Saved! File ${file_name}.txt`);
+        result = {message: `Saved! File ${file_name}.txt`};
+        resolve()
+    }
+  });
+  });
+  return result;
 }
