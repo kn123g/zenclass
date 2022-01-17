@@ -4,6 +4,7 @@
 /hackathon2_webscraping/backend/node_modules
 /hackathon2_webscraping/frontend/node_modules
 /nodejs-filesystem/node_modules
+/hall_booking_app/node_modules
 /node_modules
 /.pnp
 .pnp.js
