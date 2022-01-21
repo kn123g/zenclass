@@ -11,6 +11,8 @@
   "author": "Karthikeyan G",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-zip": "^3.0.0"
   },
