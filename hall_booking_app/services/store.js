@@ -5,6 +5,7 @@ exports.createRoom = (room_id,seats,amenities,price)=>{
     try{
         if(rooms.filter(data=>data.room_id==room_id).length == 0){
             rooms.push({id:uuidv4(),room_id,seats,amenities,price,booking_id:""});
+            console.log("creating room")
             console.log(rooms)
             return {
                 message:`room created for id ${room_id}`,
@@ -34,8 +35,8 @@ exports.bookRoom = (customer_name,room_id,date,start_time,end_time)=>{
                 let booking_id = uuidv4();
                 booking_status.push({id:booking_id,customer_name,room_id,date,start_time,end_time});
                 room.booking_id = booking_id;
+                console.log("booking room")
                 console.log(booking_status)
-                console.log(rooms)
                 return {
                     message:`room ${room_id} booked for ${customer_name}`,
                     status_code:201
@@ -72,6 +73,7 @@ exports.listRooms = ()=>{
                 available_rooms[room].booking_details = booking_details;
             }
             return available_rooms.map(data => {
+                console.log("listing rooms status")
                 console.log(data)
                 return{
                     room_name : data.room_id,
@@ -100,6 +102,7 @@ exports.listCustomers = ()=>{
     try{
         if(booking_status.length>0){
             return booking_status.map(data => {
+                console.log("listing customers")
                 console.log(data)
                 return{
                     room_name : data.room_id,
