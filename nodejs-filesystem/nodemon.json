@@ -1,5 +1,6 @@
 {
     "env": {
-        "PORT":8000
+        "PORT":8000,
+        "POSTMAN_DOC":"https://www.postman.com/kn123g/workspace/zenclass/collection/17142206-6b905df6-f523-4b21-a3c3-def7edf697a5"
     }
 }
