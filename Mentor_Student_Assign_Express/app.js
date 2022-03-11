@@ -32,5 +32,5 @@ app.use("/mentor",mentorRouter);
 
 
 app.get("/",(req,res)=>{
-  res.status(200).json({"api_docs":"hai"})
+  res.status(200).json({"api_docs":"https://www.postman.com/kn123g/workspace/zenclass/collection/17142206-62eb5bba-5df5-48ef-bfca-c935776960e4?action=share&creator=17142206"})
 });
