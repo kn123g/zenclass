@@ -1,8 +1,0 @@
-{
-    "env":{
-        "MONGO_ATLAS_USERNAME" : "webscraping",
-        "MONGO_ATLAS_PASSWORD" : "webscraping",
-        "MONGO_ATLAS_CLUSTER":"cluster0.mziya.mongodb.net",
-        "MONGO_ATLAS_DATABASE":"zenclass"
-    }
-}
